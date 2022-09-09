@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="header">
+        <div class="header__calc">
+          <h1 class="header__calc-text">calc</h1>
+        </div>
+
+        <div class="header__set">
+          <h4 class="header__set-title">Theme</h4>
+
+          <div class="header__switch">
+            <ul class="header__switch-list">
+              <li class="header__switch-item">
+                <a href="#" class="header__switch-link">1</a>
+              </li>
+              <li class="header__switch-item">
+                <a href="#" class="header__switch-link">2</a>
+              </li>
+              <li class="header__switch-item">
+                <a href="#" class="header__switch-link">3</a>
+              </li>
+            </ul>
+            <div class="header__form">
+              <button
+                type="button"
+                class="header__switch-btn header__switch-btn--1"
+              >
+                &nbsp;
+              </button>
+              <button
+                type="button"
+                class="header__switch-btn header__switch-btn--2"
+              >
+                &nbsp;
+              </button>
+              <button
+                type="button"
+                class="header__switch-btn header__switch-btn--3"
+              >
+                &nbsp;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-screen">
+        <p class="calc-screen__save"></p>
+        <p class="calc-screen__calc"></p>
+      </div>
+
+      <div class="calc-btns">
+        <button class="calc-btns__btn calc-btns__color calcNum">7</button>
+        <button class="calc-btns__btn calc-btns__color calcNum">8</button>
+        <button class="calc-btns__btn calc-btns__color calcNum">9</button>
+        <button class="calc-btns__btn btn-delete">Del</button>
+        <button class="calc-btns__btn calc-btns__color calcNum">4</button>
+        <button class="calc-btns__btn calc-btns__color calcNum">5</button>
+        <button class="calc-btns__btn calc-btns__color calcNum">6</button>
+        <button class="calc-btns__btn calc-btns__color btn-operation">+</button>
+        <button class="calc-btns__btn calc-btns__color calcNum">1</button>
+        <button class="calc-btns__btn calc-btns__color calcNum">2</button>
+        <button class="calc-btns__btn calc-btns__color calcNum">3</button>
+        <button class="calc-btns__btn calc-btns__color btn-operation">-</button>
+        <button class="calc-btns__btn calc-btns__color btn-dot">.</button>
+        <button class="calc-btns__btn calc-btns__color calcNum">0</button>
+        <button class="calc-btns__btn calc-btns__color btn-operation">/</button>
+        <button class="calc-btns__btn calc-btns__color btn-operation">x</button>
+        <button class="btn calc-btns__btn btn-reset">Reset</button>
+        <button class="btn calc-btns__btn btn-equal">=</button>
+      </div>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>

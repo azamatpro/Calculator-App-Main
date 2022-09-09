@@ -1,0 +1,33 @@
+$bp-mobile:28em;
+$bp-mini-mobile:22em;
+$bp-top-mobile:18.75em;
+
+html {
+  font-size: 62.5%; // 10px
+  font-family: "League Spartan", sans-serif;
+
+  @media only screen and(max-width: $bp-mobile){
+  font-size: 50%; // 10px
+  }
+  @media only screen and(max-width: $bp-top-mobile){
+  font-size: 40%; // 10px
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: rgba(58, 70, 99, 1);
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}

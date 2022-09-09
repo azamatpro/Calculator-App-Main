@@ -1,0 +1,188 @@
+//////////////// CALCULATOR
+.container {
+  display: grid;
+  row-gap: 2rem;
+  max-width: 36rem;
+}
+
+//////////////// CALCULATOR HEADER
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__calc {
+  }
+
+  &__calc-text {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+  }
+  &__set {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 1.5rem;
+  }
+  &__set-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+  }
+  &__switch {
+  }
+  &__switch-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.3rem;
+  }
+  &__switch-item {
+  }
+  &__switch-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+  }
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.8rem;
+    padding: 0.4rem;
+    border-radius: 10rem;
+    background-color: rgba(36, 45, 68, 1);
+  }
+  &__switch-btn {
+    border: none;
+    outline: none;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+
+    &--1 {
+      background-color: rgba(208, 63, 47, 1);
+    }
+    &--1:hover,
+    &--1:focus {
+      background-color: rgba(249, 107, 91, 1);
+    }
+
+    &--2 {
+      background-color: transparent;
+    }
+
+    &--3 {
+      background-color: transparent;
+    }
+  }
+}
+//////////////// CALCULATOR sSCREEN
+
+.calc-screen {
+  //     font-weight: 600;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  row-gap: 1.2rem;
+  background-color: rgba(24, 31, 51, 1);
+  text-align: right;
+  word-wrap: break-word;
+  word-break: break-all;
+
+  &__save {
+    font-size: 1.4rem;
+    color: #ffffff;
+    height: 1.4rem;
+  }
+  &__calc {
+    color: #ffffff;
+    font-size: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+//////////////// CALCULATOR NUMBER BTNS
+.calc-btns {
+  background-color: rgba(36, 45, 68, 1);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  &__btn {
+    font-family: "League Spartan", sans-serif;
+    text-align: center;
+    border-radius: 1rem;
+    border: none;
+    letter-spacing: -0.5px;
+    padding: 0.4rem 1.6rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  &__color {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    background-color: rgba(234, 227, 220, 1);
+    box-shadow: inset 0 -0.4rem 0 #b3a497;
+    color: rgb(67, 74, 89);
+  }
+  &__color:hover,
+  &__color:focus {
+    background-color: rgba(255, 255, 254, 1);
+  }
+}
+.btn-delete {
+  background-color: rgba(100, 113, 152, 1);
+  box-shadow: inset 0 -0.4rem 0 #414e73;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  color: #ffffff;
+}
+.btn-delete:hover,
+.btn-delete:focus {
+  background-color: rgba(162, 178, 225, 1);
+}
+.btn {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  color: #ffffff;
+  padding: 1.1rem 0 !important;
+}
+.btn-reset {
+  grid-column: 1 / span 2;
+  background-color: #647198;
+  box-shadow: inset 0px -0.4rem 0px #414e73;
+}
+.btn-reset:hover,
+.btn-reset:focus {
+  background-color: rgba(162, 178, 225, 1);
+}
+.btn-equal {
+  grid-column: 3 / span 2;
+  background-color: #d03f2f;
+  box-shadow: inset 0px -0.4rem 0px #93261a;
+}
+.btn-equal:hover,
+.btn-equal:focus {
+  background-color: rgba(249, 107, 91, 1);
+}
+.btn-multiply {
+  font-size: 2rem !important;
+}

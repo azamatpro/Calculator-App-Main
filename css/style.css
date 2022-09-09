@@ -1,0 +1,191 @@
+html {
+  font-size: 62.5%;
+  font-family: "League Spartan", sans-serif; }
+  @media only screen and (max-width: 28em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 18.75em) {
+    html {
+      font-size: 40%; } }
+
+body {
+  box-sizing: border-box;
+  background-color: #3a4663;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; }
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+.container {
+  display: grid;
+  row-gap: 2rem;
+  max-width: 36rem; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .header__calc-text {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+    letter-spacing: 0.6px;
+    color: #ffffff; }
+  .header__set {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 1.5rem; }
+  .header__set-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff; }
+  .header__switch-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.3rem; }
+  .header__switch-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.3rem; }
+  .header__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.8rem;
+    padding: 0.4rem;
+    border-radius: 10rem;
+    background-color: #242d44; }
+  .header__switch-btn {
+    border: none;
+    outline: none;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    transition: all 0.2s; }
+    .header__switch-btn--1 {
+      background-color: #d03f2f; }
+    .header__switch-btn--1:hover, .header__switch-btn--1:focus {
+      background-color: #f96b5b; }
+    .header__switch-btn--2 {
+      background-color: transparent; }
+    .header__switch-btn--3 {
+      background-color: transparent; }
+
+.calc-screen {
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  row-gap: 1.2rem;
+  background-color: #181f33;
+  text-align: right;
+  word-wrap: break-word;
+  word-break: break-all; }
+  .calc-screen__save {
+    font-size: 1.4rem;
+    color: #ffffff;
+    height: 1.4rem; }
+  .calc-screen__calc {
+    color: #ffffff;
+    font-size: 2.5rem;
+    height: 2.5rem; }
+
+.calc-btns {
+  background-color: #242d44;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem; }
+  .calc-btns__btn {
+    font-family: "League Spartan", sans-serif;
+    text-align: center;
+    border-radius: 1rem;
+    border: none;
+    letter-spacing: -0.5px;
+    padding: 0.4rem 1.6rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s; }
+  .calc-btns__color {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    background-color: #eae3dc;
+    box-shadow: inset 0 -0.4rem 0 #b3a497;
+    color: #434a59; }
+  .calc-btns__color:hover, .calc-btns__color:focus {
+    background-color: #fffffe; }
+
+.btn-delete {
+  background-color: #647198;
+  box-shadow: inset 0 -0.4rem 0 #414e73;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  color: #ffffff; }
+
+.btn-delete:hover,
+.btn-delete:focus {
+  background-color: #a2b2e1; }
+
+.btn {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  color: #ffffff;
+  padding: 1.1rem 0 !important; }
+
+.btn-reset {
+  grid-column: 1 / span 2;
+  background-color: #647198;
+  box-shadow: inset 0px -0.4rem 0px #414e73; }
+
+.btn-reset:hover,
+.btn-reset:focus {
+  background-color: #a2b2e1; }
+
+.btn-equal {
+  grid-column: 3 / span 2;
+  background-color: #d03f2f;
+  box-shadow: inset 0px -0.4rem 0px #93261a; }
+
+.btn-equal:hover,
+.btn-equal:focus {
+  background-color: #f96b5b; }
+
+.btn-multiply {
+  font-size: 2rem !important; }
+
+:root {
+  --Very-dark-blue1: hsl(222, 26%, 31%);
+  --Very-dark-blue2: hsl(
+    223,
+    31%,
+    20%
+  );
+  --Very-dark-blue3: hsl(224, 36%, 15%);
+  --Desaturated-dark-blue1: hsl(225, 21%, 49%);
+  --Desaturated-dark-blue2: hsl(224, 28%, 35%);
+  --Red: hsl(6, 63%, 50%);
+  --Dark-red: hsl(6, 70%, 34%);
+  --Light-grayish-orange: hsl(30, 25%, 89%);
+  --Grayish-orange: hsl(28, 16%, 65%);
+  --Very-dark-grayish-blue: hsl(221, 14%, 31%);
+  --White: hsl(0, 0, 100%); }
