@@ -9,6 +9,14 @@
   "author": "Azamat",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^7.0.1"
-  }
+    "node-sass": "^7.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Azamat2804/Calculator-app-main.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Azamat2804/Calculator-app-main/issues"
+  },
+  "homepage": "https://github.com/Azamat2804/Calculator-app-main#readme"
 }

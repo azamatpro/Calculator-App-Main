@@ -156,14 +156,6 @@ const init = function () {
   screenCalc.textContent = currentNumb;
 };
 
-// Iplementing numbers btn
-numBtns.forEach((num) => {
-  num.addEventListener(`click`, () => {
-    currentNumb += num.textContent;
-    screenCalc.textContent = currentNumb;
-  });
-});
-
 // Iplementing dot btn
 dotBtn.addEventListener(`click`, () => {
   if (currentNumb.includes(`.`)) return;
@@ -177,24 +169,41 @@ deleteBtn.addEventListener(`click`, () => {
   screenCalc.textContent = currentNumb;
 });
 
+// Iplementing numbers btn
+numBtns.forEach((num) => {
+  num.addEventListener(`click`, () => {
+    currentNumb += num.textContent;
+    screenCalc.textContent = currentNumb;
+  });
+});
+
 // Chosing operation symbol
 const chooseOperation = function (operationSign) {
-  switch (operationSign) {
-    case `${operationSign}`:
-      previousNumb = +screenCalc.textContent;
-      screenSave.textContent = `${previousNumb} ${operationSign}`;
-      operationSymbol = `${operationSign}`;
-
-      break;
-    default:
-      break;
+  if(previousNumb){
+    if(operationSign == `+`){
+      previousNumb += +currentNumb
+      console.log(previousNumb, operationSign)
+    }
+    if(operationSign == '-'){
+      previousNumb -= +currentNumb
+    }
+    if(operationSign == '*'){
+      previousNumb *= +currentNumb
+    }
+    if(operationSign =='/'){
+      previousNumb /= +currentNumb
+    }
+  }else{
+    previousNumb = +currentNumb
   }
+  screenSave.textContent = `${previousNumb} ${operationSign}`;
+  currentNumb = "";
+  return previousNumb
 };
 
 // Implementing Operations
 operationBtns.forEach((operation) => {
   operation.addEventListener(`click`, () => {
-    currentNumb = "";
     chooseOperation(operation.textContent);
   });
 });
@@ -203,22 +212,7 @@ operationBtns.forEach((operation) => {
 equalBtn.addEventListener(`click`, () => {
   if (!previousNumb || !currentNumb) return;
   screenSave.textContent = `${previousNumb} ${operationSymbol} ${currentNumb} =`;
-  switch (operationSymbol) {
-    case `+`:
-      equalResult = previousNumb + +currentNumb;
-      break;
-    case `-`:
-      equalResult = previousNumb - currentNumb;
-      break;
-    case `/`:
-      equalResult = previousNumb / currentNumb;
-      break;
-    case `x`:
-      equalResult = previousNumb * currentNumb;
-      break;
-    default:
-      break;
-  }
+ 
   screenCalc.textContent = equalResult.toFixed(2);
   previousNumb = equalResult;
   currentNumb = ``;
