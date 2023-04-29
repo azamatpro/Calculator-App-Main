@@ -1,22 +1,14 @@
 {
   "name": "calculator-app-main",
   "version": "1.0.0",
-  "description": "Calculator App",
-  "main": "index.js",
+  "description": "![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)",
+  "main": "script.js",
   "scripts": {
-    "start": "node-sass sass/main.scss css/style.css -w"
+    "start": "sass sass/main.scss css/style.css -w"
   },
-  "author": "Azamat",
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "node-sass": "^7.0.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Azamat2804/Calculator-app-main.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Azamat2804/Calculator-app-main/issues"
-  },
-  "homepage": "https://github.com/Azamat2804/Calculator-app-main#readme"
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
 }

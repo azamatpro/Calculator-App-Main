@@ -147,7 +147,7 @@ let equalResult;
 
 // Impelementing init function to reset
 const init = function () {
-  previousNumb = "";
+  previousNumb = 0;
   currentNumb = "";
   operationSymbol = "";
   equalResult = 0;
@@ -165,6 +165,10 @@ dotBtn.addEventListener(`click`, () => {
 
 // Iplementing delete btn
 deleteBtn.addEventListener(`click`, () => {
+  if (screenCalc.textContent === "") {
+    screenSave.textContent = screenSave.textContent.slice(0, -1);
+  }
+  previousNumb = 0;
   currentNumb = currentNumb.slice(0, -1);
   screenCalc.textContent = currentNumb;
 });
@@ -172,33 +176,34 @@ deleteBtn.addEventListener(`click`, () => {
 // Iplementing numbers btn
 numBtns.forEach((num) => {
   num.addEventListener(`click`, () => {
-    currentNumb += num.textContent;
+    currentNumb += +num.textContent;
     screenCalc.textContent = currentNumb;
   });
 });
 
 // Chosing operation symbol
 const chooseOperation = function (operationSign) {
-  if(previousNumb){
-    if(operationSign == `+`){
-      previousNumb += +currentNumb
-      console.log(previousNumb, operationSign)
+  operationSymbol = operationSign;
+  if (previousNumb) {
+    if (operationSign == `+`) {
+      console.log(previousNumb, currentNumb);
+      previousNumb += currentNumb;
     }
-    if(operationSign == '-'){
-      previousNumb -= +currentNumb
+    if (operationSign == "-") {
+      previousNumb -= +currentNumb;
     }
-    if(operationSign == '*'){
-      previousNumb *= +currentNumb
+    if (operationSign == "*") {
+      previousNumb *= +currentNumb;
     }
-    if(operationSign =='/'){
-      previousNumb /= +currentNumb
+    if (operationSign == "/") {
+      previousNumb /= +currentNumb;
     }
-  }else{
-    previousNumb = +currentNumb
+  } else {
+    previousNumb = +currentNumb;
   }
   screenSave.textContent = `${previousNumb} ${operationSign}`;
   currentNumb = "";
-  return previousNumb
+  return previousNumb;
 };
 
 // Implementing Operations
@@ -212,9 +217,18 @@ operationBtns.forEach((operation) => {
 equalBtn.addEventListener(`click`, () => {
   if (!previousNumb || !currentNumb) return;
   screenSave.textContent = `${previousNumb} ${operationSymbol} ${currentNumb} =`;
- 
+  if (operationSymbol === "+") {
+    console.log(previousNumb, +currentNumb);
+    equalResult = previousNumb + +currentNumb;
+  } else if (operationSymbol === "-") {
+    equalResult = previousNumb - +currentNumb;
+  } else if (operationSymbol === "/") {
+    equalResult = previousNumb / +currentNumb;
+  } else if (operationSymbol === "x") {
+    equalResult = previousNumb * +currentNumb;
+  }
   screenCalc.textContent = equalResult.toFixed(2);
-  previousNumb = equalResult;
+  previousNumb = 0;
   currentNumb = ``;
 });
 
